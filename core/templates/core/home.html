@@ -1,0 +1,571 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OYNA — учись, играя</title>
+
+    <link rel="stylesheet" href="{% static 'core/style.css' %}">
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="/" class="logo">
+            <span class="logo-icon">O</span>
+            <span>OYNA</span>
+        </a>
+
+        <nav class="navigation">
+            <a href="#games">Игры</a>
+            <a href="#features">Возможности</a>
+            <a href="#arduino">Arduino</a>
+        </nav>
+
+        <div class="header-actions">
+
+    <select id="languageSelect" class="language-select" aria-label="Выбрать язык">
+        <option value="ru">RU</option>
+        <option value="kk">KZ</option>
+        <option value="en">EN</option>
+    </select>
+
+    <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Переключить тему"
+    >
+        ☾
+    </button>
+
+    <button
+    type="button"
+    class="login-button"
+    onclick="window.location.href='/users/login/'"
+>
+    <span data-i18n="login">Войти</span>
+</button>
+
+</div>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    <span class="status-dot"></span>
+                    ОБУЧЕНИЕ НОВОГО ПОКОЛЕНИЯ
+                </div>
+
+                <h1>
+                    Знания — это игра.<br>
+                    <span>Твой ход!</span>
+                </h1>
+
+                <p class="hero-description">
+                    Изучай новое, проходи игровые задания,
+                    соревнуйся с друзьями и открывай
+                    новые возможности вместе с OYNA.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#games" class="button-primary">
+                        Исследовать игры <span>→</span>
+                    </a>
+
+                    <a href="#features" class="button-secondary">
+                        Как это работает?
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div>
+                        <strong>20</strong>
+                        <span>игровых режимов</span>
+                    </div>
+
+                    <div>
+                        <strong>3</strong>
+                        <span>языка интерфейса</span>
+                    </div>
+
+                    <div>
+                        <strong>∞</strong>
+                        <span>возможностей учиться</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="floating-symbol symbol-one">✦</div>
+                <div class="floating-symbol symbol-two">+</div>
+                <div class="floating-symbol symbol-three">★</div>
+
+                <div class="game-card">
+
+                    <div class="game-card-top">
+                        <span class="game-label">OYNA CHALLENGE</span>
+                        <span class="live-indicator">● LIVE</span>
+                    </div>
+
+                    <div class="game-icon">O</div>
+
+                    <h2>Готов проверить знания?</h2>
+
+                    <p>Каждый правильный ответ приближает тебя к победе.</p>
+
+                    <div class="progress-info">
+                        <span>Твой прогресс</span>
+                        <strong>75%</strong>
+                    </div>
+
+                    <div class="progress-track">
+                        <div class="progress-fill"></div>
+                    </div>
+
+                    <div class="game-card-bottom">
+                        <div class="avatar-stack">
+                            <span>O</span>
+                            <span>Y</span>
+                            <span>A</span>
+                        </div>
+
+                        <span>Играй вместе с друзьями</span>
+                    </div>
+
+                </div>
+
+                <div class="floating-score">
+                    <span>✦</span>
+                    <div>
+                        <strong>+100 XP</strong>
+                        <small>Отличный результат!</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section" id="games">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">ВЫБИРАЙ СВОЙ ПУТЬ</span>
+                    <h2>Играй по-своему</h2>
+                </div>
+
+                <p>
+                    Разные механики, новые испытания
+                    и знания, которые хочется получать.
+                </p>
+            </div>
+
+
+            <div class="games-grid">
+
+                <article class="feature-card card-purple">
+                    <div class="feature-icon">⚡</div>
+                    <span class="card-number">01 / СКОРОСТЬ</span>
+                    <h3>Молниеносный выбор</h3>
+                    <p>Думай быстро, отвечай точно и зарабатывай очки.</p>
+                    <span class="card-arrow">↗</span>
+                </article>
+
+                <article class="feature-card card-turquoise">
+                    <div class="feature-icon">◈</div>
+                    <span class="card-number">02 / ЛОГИКА</span>
+                    <h3>Пары знаний</h3>
+                    <p>Находи связи между понятиями и тренируй память.</p>
+                    <span class="card-arrow">↗</span>
+                </article>
+
+                <article class="feature-card card-yellow">
+                    <div class="feature-icon">⌘</div>
+                    <span class="card-number">03 / КОМАНДА</span>
+                    <h3>Битва команд</h3>
+                    <p>Объединяйся с друзьями и борись за первое место.</p>
+                    <span class="card-arrow">↗</span>
+                </article>
+
+            </div>
+
+            <p class="section-note">
+                Это примеры игровых режимов. Полный каталог появится
+                по мере реализации игр.
+            </p>
+
+        </section>
+
+
+        <section class="arduino-section" id="arduino">
+
+            <div class="arduino-content">
+
+                <span class="eyebrow">ФИЗИЧЕСКИЙ ИГРОВОЙ РАУНД</span>
+
+                <h2>
+                    Не только клики.<br>
+                    <span>Настоящая реакция.</span>
+                </h2>
+
+                <p>
+                    Три физические кнопки Arduino превратят
+                    обычный вопрос в соревнование на скорость.
+                    Кто нажмёт первым и правильно ответит?
+                </p>
+
+                <div class="arduino-points">
+                    <div>✓ Три командные кнопки</div>
+                    <div>✓ Определение первого нажатия</div>
+                    <div>✓ Подсчёт очков на сайте</div>
+                </div>
+
+                <span class="coming-soon">ARDUINO MODE · В РАЗРАБОТКЕ</span>
+
+            </div>
+
+            <div class="arduino-visual">
+                <div class="controller">
+                    <div class="controller-top">
+                        <span>OYNA</span>
+                        <span class="controller-status"></span>
+                    </div>
+
+                    <div class="controller-buttons">
+                        <div class="physical-button button-one">
+                            <span></span>
+                            <small>TEAM 01</small>
+                        </div>
+
+                        <div class="physical-button button-two">
+                            <span></span>
+                            <small>TEAM 02</small>
+                        </div>
+
+                        <div class="physical-button button-three">
+                            <span></span>
+                            <small>TEAM 03</small>
+                        </div>
+                    </div>
+
+                    <div class="controller-bottom">
+                        REACTION SYSTEM / 001
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="start-section" id="features">
+
+            <span class="eyebrow">ТВОИ ЗНАНИЯ. ТВОИ ПРАВИЛА.</span>
+
+            <h2>Готов начать?</h2>
+
+            <p>
+                Создавай игры, изучай новое и открывай
+                собственный путь к знаниям.
+            </p>
+
+            <a href="#start" class="button-primary">
+                Скоро здесь начнётся игра →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer" id="start">
+        <a href="/" class="logo">
+            <span class="logo-icon">O</span>
+            <span>OYNA</span>
+        </a>
+
+        <p>Учись. Играй. Развивайся.</p>
+
+        <span>© 2026 OYNA</span>
+    </footer>
+
+
+    <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const languageSelect = document.getElementById('languageSelect');
+
+    // Переключение темы
+    function applyTheme(theme) {
+        root.dataset.theme = theme;
+
+        themeToggle.textContent = theme === 'dark' ? '☀' : '☾';
+
+        localStorage.setItem('oyna-theme', theme);
+    }
+
+    const savedTheme = localStorage.getItem('oyna-theme') || 'light';
+
+    applyTheme(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const newTheme =
+            root.dataset.theme === 'light' ? 'dark' : 'light';
+
+        applyTheme(newTheme);
+    });
+
+
+    // Переводы интерфейса
+    const translations = {
+        ru: {
+            navGames: 'Игры',
+            navFeatures: 'Возможности',
+            navArduino: 'Arduino',
+            login: 'Войти',
+            badge: 'ОБУЧЕНИЕ НОВОГО ПОКОЛЕНИЯ',
+            title: 'Знания — это игра.',
+            titleSecond: 'Твой ход!',
+            description: 'Изучай новое, проходи игровые задания, соревнуйся с друзьями и открывай новые возможности вместе с OYNA.',
+            explore: 'Исследовать игры',
+            how: 'Как это работает?',
+            modes: 'игровых режимов',
+            languages: 'языка интерфейса',
+            opportunities: 'возможностей учиться',
+            challenge: 'Готов проверить знания?',
+            challengeText: 'Каждый правильный ответ приближает тебя к победе.',
+            progress: 'Твой прогресс',
+            friends: 'Играй вместе с друзьями',
+            sectionEyebrow: 'ВЫБИРАЙ СВОЙ ПУТЬ',
+            gamesTitle: 'Играй по-своему',
+            gamesDescription: 'Разные механики, новые испытания и знания, которые хочется получать.',
+            speed: '01 / СКОРОСТЬ',
+            speedTitle: 'Молниеносный выбор',
+            speedText: 'Думай быстро, отвечай точно и зарабатывай очки.',
+            logic: '02 / ЛОГИКА',
+            logicTitle: 'Пары знаний',
+            logicText: 'Находи связи между понятиями и тренируй память.',
+            team: '03 / КОМАНДА',
+            teamTitle: 'Битва команд',
+            teamText: 'Объединяйся с друзьями и борись за первое место.',
+            catalogNote: 'Это примеры игровых режимов. Полный каталог появится по мере реализации игр.',
+            arduinoEyebrow: 'ФИЗИЧЕСКИЙ ИГРОВОЙ РАУНД',
+            arduinoTitle: 'Не только клики.',
+            arduinoTitleSecond: 'Настоящая реакция.',
+            arduinoText: 'Три физические кнопки Arduino превратят обычный вопрос в соревнование на скорость. Кто нажмёт первым и правильно ответит?',
+            pointOne: '✓ Три командные кнопки',
+            pointTwo: '✓ Определение первого нажатия',
+            pointThree: '✓ Подсчёт очков на сайте',
+            arduinoStatus: 'ARDUINO MODE · В РАЗРАБОТКЕ',
+            startEyebrow: 'ТВОИ ЗНАНИЯ. ТВОИ ПРАВИЛА.',
+            startTitle: 'Готов начать?',
+            startText: 'Создавай игры, изучай новое и открывай собственный путь к знаниям.',
+            startButton: 'Скоро здесь начнётся игра →',
+            footerTagline: 'Учись. Играй. Развивайся.'
+        },
+
+        kk: {
+            navGames: 'Ойындар',
+            navFeatures: 'Мүмкіндіктер',
+            navArduino: 'Arduino',
+            login: 'Кіру',
+            badge: 'ЖАҢА ҰРПАҚҚА АРНАЛҒАН ОҚУ',
+            title: 'Білім — бұл ойын.',
+            titleSecond: 'Енді сенің кезегің!',
+            description: 'Жаңа білім ал, тапсырмаларды ойын түрінде орында, достарыңмен жарыс және OYNA арқылы жаңа мүмкіндіктерді аш.',
+            explore: 'Ойындарды көру',
+            how: 'Бұл қалай жұмыс істейді?',
+            modes: 'ойын режимі',
+            languages: 'интерфейс тілі',
+            opportunities: 'білім алу мүмкіндігі',
+            challenge: 'Біліміңді тексеруге дайынсың ба?',
+            challengeText: 'Әр дұрыс жауап сені жеңіске жақындатады.',
+            progress: 'Сенің жетістігің',
+            friends: 'Достарыңмен бірге ойна',
+            sectionEyebrow: 'ӨЗ ЖОЛЫҢДЫ ТАҢДА',
+            gamesTitle: 'Өзіңе сай ойна',
+            gamesDescription: 'Әртүрлі ойын механикалары, жаңа сынақтар және қызықты білім.',
+            speed: '01 / ЖЫЛДАМДЫҚ',
+            speedTitle: 'Жылдам таңдау',
+            speedText: 'Тез ойлан, дұрыс жауап бер және ұпай жина.',
+            logic: '02 / ЛОГИКА',
+            logicTitle: 'Білім жұптары',
+            logicText: 'Ұғымдардың байланысын тап және есте сақтау қабілетіңді дамыт.',
+            team: '03 / КОМАНДА',
+            teamTitle: 'Командалар шайқасы',
+            teamText: 'Достарыңмен бірігіп, бірінші орын үшін күрес.',
+            catalogNote: 'Бұл ойын режимдерінің мысалдары. Толық каталог ойындар дайын болған сайын қосылады.',
+            arduinoEyebrow: 'ФИЗИКАЛЫҚ ОЙЫН КЕЗЕҢІ',
+            arduinoTitle: 'Тек экранды басу емес.',
+            arduinoTitleSecond: 'Нағыз жылдамдық.',
+            arduinoText: 'Arduino құрылғысының үш батырмасы сұрақты жылдамдық сайысына айналдырады. Кім бірінші басып, дұрыс жауап береді?',
+            pointOne: '✓ Үш командалық батырма',
+            pointTwo: '✓ Бірінші басуды анықтау',
+            pointThree: '✓ Сайтта ұпай есептеу',
+            arduinoStatus: 'ARDUINO MODE · ӘЗІРЛЕНУ ҮСТІНДЕ',
+            startEyebrow: 'СЕНІҢ БІЛІМІҢ. СЕНІҢ ЕРЕЖЕЛЕРІҢ.',
+            startTitle: 'Бастауға дайынсың ба?',
+            startText: 'Ойындар құрастыр, жаңа білім ал және өз жолыңды аш.',
+            startButton: 'Жақында ойын басталады →',
+            footerTagline: 'Үйрен. Ойна. Дамы.'
+        },
+
+        en: {
+            navGames: 'Games',
+            navFeatures: 'Features',
+            navArduino: 'Arduino',
+            login: 'Log in',
+            badge: 'NEXT-GENERATION LEARNING',
+            title: 'Knowledge is a game.',
+            titleSecond: 'Your move!',
+            description: 'Learn something new, complete challenges, compete with friends and discover new possibilities with OYNA.',
+            explore: 'Explore games',
+            how: 'How does it work?',
+            modes: 'game modes',
+            languages: 'interface languages',
+            opportunities: 'ways to learn',
+            challenge: 'Ready to test your knowledge?',
+            challengeText: 'Every correct answer brings you closer to victory.',
+            progress: 'Your progress',
+            friends: 'Play with your friends',
+            sectionEyebrow: 'CHOOSE YOUR PATH',
+            gamesTitle: 'Play your way',
+            gamesDescription: 'Different mechanics, new challenges and knowledge worth discovering.',
+            speed: '01 / SPEED',
+            speedTitle: 'Lightning Choice',
+            speedText: 'Think fast, answer accurately and earn points.',
+            logic: '02 / LOGIC',
+            logicTitle: 'Knowledge Pairs',
+            logicText: 'Connect related concepts and train your memory.',
+            team: '03 / TEAMWORK',
+            teamTitle: 'Team Battle',
+            teamText: 'Join your friends and compete for first place.',
+            catalogNote: 'These are examples of game modes. The full catalog will grow as games are implemented.',
+            arduinoEyebrow: 'PHYSICAL GAME ROUND',
+            arduinoTitle: 'More than clicks.',
+            arduinoTitleSecond: 'Real reaction.',
+            arduinoText: 'Three physical Arduino buttons turn a question into a speed competition. Who will press first and answer correctly?',
+            pointOne: '✓ Three team buttons',
+            pointTwo: '✓ First-press detection',
+            pointThree: '✓ Score tracking on the website',
+            arduinoStatus: 'ARDUINO MODE · IN DEVELOPMENT',
+            startEyebrow: 'YOUR KNOWLEDGE. YOUR RULES.',
+            startTitle: 'Ready to begin?',
+            startText: 'Create games, learn new things and discover your own path to knowledge.',
+            startButton: 'Your game starts here soon →',
+            footerTagline: 'Learn. Play. Grow.'
+        }
+    };
+
+
+    // Связываем элементы HTML с переводами
+    const translationMap = {
+        '.navigation a:nth-child(1)': 'navGames',
+        '.navigation a:nth-child(2)': 'navFeatures',
+        '.navigation a:nth-child(3)': 'navArduino',
+        '[data-i18n="login"]': 'login',
+        '.badge': 'badge',
+        '.hero h1 span': 'titleSecond',
+        '.hero-description': 'description',
+        '.hero-buttons .button-primary': 'explore',
+        '.hero-buttons .button-secondary': 'how',
+        '.hero-stats div:nth-child(1) span': 'modes',
+        '.hero-stats div:nth-child(2) span': 'languages',
+        '.hero-stats div:nth-child(3) span': 'opportunities',
+        '.game-card h2': 'challenge',
+        '.game-card > p': 'challengeText',
+        '.progress-info span': 'progress',
+        '.game-card-bottom > span': 'friends',
+        '.section-heading .eyebrow': 'sectionEyebrow',
+        '.section-heading h2': 'gamesTitle',
+        '.section-heading > p': 'gamesDescription',
+        '.card-purple .card-number': 'speed',
+        '.card-purple h3': 'speedTitle',
+        '.card-purple p': 'speedText',
+        '.card-turquoise .card-number': 'logic',
+        '.card-turquoise h3': 'logicTitle',
+        '.card-turquoise p': 'logicText',
+        '.card-yellow .card-number': 'team',
+        '.card-yellow h3': 'teamTitle',
+        '.card-yellow p': 'teamText',
+        '.section-note': 'catalogNote',
+        '.arduino-content .eyebrow': 'arduinoEyebrow',
+        '.arduino-content h2': 'arduinoTitle',
+        '.arduino-content > p': 'arduinoText',
+        '.arduino-points div:nth-child(1)': 'pointOne',
+        '.arduino-points div:nth-child(2)': 'pointTwo',
+        '.arduino-points div:nth-child(3)': 'pointThree',
+        '.coming-soon': 'arduinoStatus',
+        '.start-section .eyebrow': 'startEyebrow',
+        '.start-section h2': 'startTitle',
+        '.start-section > p': 'startText',
+        '.start-section .button-primary': 'startButton',
+        '.footer p': 'footerTagline'
+    };
+
+
+    function applyLanguage(language) {
+        const dictionary = translations[language] || translations.ru;
+
+        Object.entries(translationMap).forEach(([selector, key]) => {
+            const element = document.querySelector(selector);
+
+            if (element && dictionary[key]) {
+                element.textContent = dictionary[key];
+            }
+        });
+
+        // Заголовок содержит две части, поэтому переводим их отдельно.
+        const heroTitle = document.querySelector('.hero h1');
+
+        if (heroTitle) {
+            heroTitle.innerHTML =
+                `${dictionary.title}<br><span>${dictionary.titleSecond}</span>`;
+        }
+
+        // Сохраняем язык
+        localStorage.setItem('oyna-language', language);
+
+        // Меняем язык документа
+        root.lang = language === 'kk' ? 'kk' : language;
+    }
+
+
+    const savedLanguage = localStorage.getItem('oyna-language') || 'ru';
+
+    languageSelect.value = savedLanguage;
+    applyLanguage(savedLanguage);
+
+    languageSelect.addEventListener('change', () => {
+        applyLanguage(languageSelect.value);
+    });
+</script>
+
+<script>
+document.addEventListener('click', function(event) {
+    const button = event.target.closest('.login-button');
+
+    if (button) {
+        console.log('Кнопка входа нажата');
+        console.log('Кнопка:', button);
+        console.log('Ссылка:', button.getAttribute('onclick'));
+    }
+}, true);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация — OYNA</title>
+    <link rel="stylesheet" href="{% static 'core/style.css' %}">
+</head>
+<body>
+
+    <main class="auth-page">
+        <section class="auth-card">
+            <a href="/" class="logo">OYNA<span>.</span></a>
+
+            <h1>Создать аккаунт</h1>
+            <p>Присоединяйся к обучению в игровом формате.</p>
+
+            <form method="post">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <button type="submit" class="button button-primary">
+                    Зарегистрироваться
+                </button>
+            </form>
+
+            <p class="auth-bottom">
+                Уже есть аккаунт?
+                <a href="{% url 'login' %}">Войти</a>
+            </p>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,1322 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #f8f7fc;
+    --surface: #ffffff;
+    --text: #25243a;
+    --muted: #77758c;
+    --primary: #7655e8;
+    --primary-dark: #35205f;
+    --turquoise: #36d6c5;
+    --border: #ece9f5;
+    --shadow: 0 20px 60px rgba(53, 32, 95, 0.09);
+}
+
+html[data-theme="dark"] {
+    --bg: #171426;
+    --surface: #211c35;
+    --text: #f7f4ff;
+    --muted: #b2acc8;
+    --primary: #a28aff;
+    --primary-dark: #35205f;
+    --turquoise: #36d6c5;
+    --border: #39314e;
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Manrope', Arial, sans-serif;
+    transition: background 0.25s, color 0.25s;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+.header {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo-icon {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 13px;
+    background: var(--primary);
+    color: white;
+}
+
+.navigation,
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navigation a {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.navigation a:hover {
+    color: var(--primary);
+}
+
+.header-actions {
+    gap: 12px;
+}
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.language-select {
+    height: 42px;
+    padding: 0 10px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    outline: none;
+}
+
+.language-select:focus {
+    border-color: var(--primary);
+}
+
+.language-select option {
+    background: var(--surface);
+    color: var(--text);
+}
+
+.login-button {
+    padding: 12px 22px;
+    border-radius: 13px;
+    background: var(--primary);
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.hero {
+    width: min(1200px, calc(100% - 48px));
+    min-height: 570px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 35px;
+    padding: 55px 0 85px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.badge,
+.eyebrow {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 15px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    background: var(--surface);
+    letter-spacing: 0.8px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--turquoise);
+}
+
+.hero h1 {
+    margin: 26px 0 18px;
+    font-size: clamp(42px, 5vw, 66px);
+    line-height: 1.13;
+    letter-spacing: -3px;
+}
+
+.hero h1 span,
+.arduino-content h2 span {
+    color: var(--primary);
+}
+
+.hero-description {
+    max-width: 480px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.button-primary,
+.button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 20px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: transform 0.2s;
+}
+
+.button-primary:hover,
+.button-secondary:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 10px 25px rgba(118, 85, 232, 0.2);
+}
+
+.button-secondary {
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 42px;
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hero-stats strong {
+    font-size: 23px;
+}
+
+.hero-stats span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.hero-visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 420px;
+    overflow: hidden;
+    border-radius: 36px;
+    background:
+        radial-gradient(circle at 75% 25%, rgba(54, 214, 197, 0.22), transparent 32%),
+        radial-gradient(circle at 25% 75%, rgba(118, 85, 232, 0.22), transparent 36%),
+        var(--surface);
+    border: 1px solid var(--border);
+}
+
+.orbit {
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    border: 1px solid rgba(118, 85, 232, 0.17);
+    border-radius: 50%;
+}
+
+.orbit-two {
+    width: 390px;
+    height: 390px;
+}
+
+.game-card {
+    position: relative;
+    z-index: 2;
+    width: min(330px, 80%);
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    transform: rotate(-2deg);
+}
+
+.game-card-top,
+.game-card-bottom,
+.progress-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.game-label,
+.live-indicator {
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.game-label {
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.live-indicator {
+    color: #20b9a8;
+}
+
+.game-icon {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    margin: 25px 0 18px;
+    border-radius: 20px;
+    background: var(--primary);
+    color: white;
+    font-size: 34px;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.game-card h2 {
+    margin: 0 0 10px;
+    font-size: 21px;
+    line-height: 1.4;
+}
+
+.game-card > p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.progress-info {
+    margin-top: 24px;
+    font-size: 10px;
+}
+
+.progress-info strong {
+    color: var(--primary);
+}
+
+.progress-track {
+    height: 7px;
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--border);
+}
+
+.progress-fill {
+    width: 75%;
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--primary), var(--turquoise));
+}
+
+.game-card-bottom {
+    justify-content: flex-start;
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.avatar-stack {
+    display: flex;
+    padding-left: 3px;
+}
+
+.avatar-stack span {
+    display: grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    margin-left: -3px;
+    border: 2px solid var(--surface);
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.avatar-stack span:nth-child(2) {
+    background: #25bcae;
+}
+
+.avatar-stack span:nth-child(3) {
+    background: #edb54c;
+}
+
+.floating-symbol {
+    position: absolute;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    color: var(--primary);
+    font-size: 23px;
+}
+
+.symbol-one {
+    top: 50px;
+    left: 55px;
+}
+
+.symbol-two {
+    right: 50px;
+    top: 105px;
+    color: #21b9aa;
+}
+
+.symbol-three {
+    bottom: 45px;
+    left: 70px;
+    color: #e8ae35;
+}
+
+.floating-score {
+    position: absolute;
+    z-index: 4;
+    right: 20px;
+    bottom: 35px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.floating-score > span {
+    color: #e8ae35;
+    font-size: 25px;
+}
+
+.floating-score div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.floating-score strong {
+    font-size: 11px;
+}
+
+.floating-score small {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.section,
+.arduino-section,
+.start-section {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.section {
+    padding: 55px 0 90px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.section-heading h2,
+.start-section h2 {
+    margin: 12px 0 0;
+    font-size: clamp(30px, 4vw, 43px);
+    letter-spacing: -1.5px;
+}
+
+.section-heading > p {
+    max-width: 350px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    position: relative;
+    min-height: 260px;
+    padding: 25px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: var(--surface);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.feature-icon {
+    display: grid;
+    place-items: center;
+    width: 53px;
+    height: 53px;
+    margin-bottom: 25px;
+    border-radius: 17px;
+    background: #eee8ff;
+    color: #7655e8;
+    font-size: 25px;
+}
+
+.card-turquoise .feature-icon {
+    background: #ddfaf5;
+    color: #149e91;
+}
+
+.card-yellow .feature-icon {
+    background: #fff3ce;
+    color: #bb8615;
+}
+
+.card-number {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.feature-card h3 {
+    margin: 12px 0 9px;
+    font-size: 19px;
+}
+
+.feature-card p {
+    max-width: 270px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.card-arrow {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: var(--muted);
+    font-size: 20px;
+}
+
+.section-note {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.arduino-section {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 40px;
+    padding: 60px;
+    overflow: hidden;
+    border-radius: 32px;
+    background: var(--primary-dark);
+    color: white;
+}
+
+.arduino-content .eyebrow {
+    color: var(--turquoise);
+}
+
+.arduino-content h2 {
+    margin: 18px 0;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.25;
+    letter-spacing: -1.5px;
+}
+
+.arduino-content h2 span {
+    color: var(--turquoise);
+}
+
+.arduino-content > p {
+    max-width: 480px;
+    color: #c9c1df;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.arduino-points {
+    display: grid;
+    gap: 12px;
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+.arduino-points div::first-letter {
+    color: var(--turquoise);
+}
+
+.coming-soon {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 13px;
+    border: 1px solid rgba(54, 214, 197, 0.4);
+    border-radius: 10px;
+    color: var(--turquoise);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.arduino-visual {
+    display: grid;
+    place-items: center;
+    min-height: 280px;
+}
+
+.controller {
+    width: min(350px, 100%);
+    padding: 24px;
+    border: 1px solid #554574;
+    border-radius: 25px;
+    background: #241b3a;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+    transform: rotate(2deg);
+}
+
+.controller-top,
+.controller-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #c9c1df;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.controller-status {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--turquoise);
+    box-shadow: 0 0 12px rgba(54, 214, 197, 0.6);
+}
+
+.controller-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 35px 0;
+}
+
+.physical-button {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.physical-button span {
+    width: 62px;
+    height: 62px;
+    border: 5px solid #413456;
+    border-radius: 50%;
+    background: #7655e8;
+    box-shadow: 0 6px 0 #4b328d;
+}
+
+.button-two span {
+    background: #36d6c5;
+    box-shadow: 0 6px 0 #168d82;
+}
+
+.button-three span {
+    background: #ffd166;
+    box-shadow: 0 6px 0 #a47d26;
+}
+
+.physical-button small {
+    color: #c9c1df;
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.controller-bottom {
+    padding-top: 17px;
+    border-top: 1px solid #413456;
+    font-size: 8px;
+}
+
+.start-section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.start-section h2 {
+    margin-top: 16px;
+}
+
+.start-section > p {
+    max-width: 470px;
+    margin: 16px auto 25px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 28px max(24px, calc((100% - 1200px) / 2));
+    border-top: 1px solid var(--border);
+}
+
+.footer p,
+.footer > span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+@media (max-width: 850px) {
+    .navigation {
+        gap: 14px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 35px;
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .hero-visual {
+        min-height: 400px;
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .arduino-section {
+        grid-template-columns: 1fr;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 560px) {
+    .header {
+        width: calc(100% - 32px);
+        min-height: 75px;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .logo-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .header-actions {
+        margin-left: auto;
+    }
+
+    .hero,
+    .section,
+    .arduino-section,
+    .start-section {
+        width: calc(100% - 32px);
+    }
+
+    .hero {
+        gap: 30px;
+        padding: 35px 0 55px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .hero-stats strong {
+        font-size: 20px;
+    }
+
+    .hero-stats span {
+        max-width: 100px;
+        line-height: 1.5;
+    }
+
+    .hero-visual {
+        min-height: 360px;
+        border-radius: 25px;
+    }
+
+    .game-card {
+        padding: 19px;
+    }
+
+    .symbol-one {
+        left: 15px;
+    }
+
+    .symbol-two {
+        right: 15px;
+    }
+
+    .symbol-three {
+        left: 20px;
+        bottom: 20px;
+    }
+
+    .floating-score {
+        right: 10px;
+        bottom: 15px;
+        padding: 10px;
+    }
+
+    .section {
+        padding: 35px 0 60px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        min-height: 230px;
+    }
+
+    .arduino-section {
+        padding: 28px 20px;
+        border-radius: 25px;
+    }
+
+    .controller {
+        padding: 18px 12px;
+    }
+
+    .physical-button span {
+        width: 52px;
+        height: 52px;
+    }
+
+    .footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 25px 20px;
+        gap: 10px;
+    }
+}
+
+/* Страницы входа и регистрации */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 16px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 36px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: var(--surface);
+    box-shadow: 0 15px 50px rgba(53, 32, 95, 0.08);
+}
+
+.auth-card > .logo {
+    display: inline-block;
+    margin-bottom: 28px;
+    color: var(--text);
+    font-size: 28px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.auth-card > .logo span {
+    color: var(--primary);
+}
+
+.auth-card h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.auth-card > p {
+    margin-bottom: 24px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.auth-card form p {
+    margin-bottom: 18px;
+}
+
+.auth-card form label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.auth-card form input,
+.auth-card form select {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+}
+
+.auth-card form ul,
+.auth-card .helptext {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.auth-card form ul {
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.auth-card form button {
+    width: 100%;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.auth-card .auth-bottom {
+    margin: 22px 0 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.auth-bottom a {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 24px 20px;
+    }
+
+    .auth-card h1 {
+        font-size: 24px;
+    }
+}
+
+/* Исправление кликабельности кнопки входа */
+
+.header {
+    position: relative;
+    z-index: 1000;
+}
+
+.header-actions {
+    position: relative;
+    z-index: 1001;
+}
+
+.login-button {
+    position: relative;
+    z-index: 1002;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.login-button span {
+    pointer-events: none;
+}
+
+button.login-button {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    pointer-events: auto;
+    position: relative;
+    z-index: 9999;
+}
+
+/* ===== OYNA: страница входа ===== */
+
+.auth-body {
+    min-height: 100vh;
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 15% 20%, rgba(118, 85, 232, 0.13), transparent 40%),
+        radial-gradient(ellipse at 85% 80%, rgba(54, 214, 197, 0.12), transparent 35%),
+        var(--background, #f8f7fc);
+    color: var(--text, #25243a);
+}
+
+.auth-header {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.auth-header .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 800;
+    color: inherit;
+}
+
+.auth-back {
+    color: inherit;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+}
+
+.auth-back:hover {
+    opacity: 1;
+}
+
+.auth-page {
+    position: relative;
+    min-height: calc(100vh - 90px);
+    padding: 30px 20px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.auth-card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 440px);
+    padding: 42px;
+    box-sizing: border-box;
+    border: 1px solid rgba(118, 85, 232, 0.15);
+    border-radius: 28px;
+    background: var(--card-bg, rgba(255, 255, 255, 0.92));
+    box-shadow: 0 24px 80px rgba(53, 32, 95, 0.10);
+    text-align: center;
+    animation: auth-appear 0.45s ease-out;
+}
+
+.auth-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    display: grid;
+    place-items: center;
+    border-radius: 19px;
+    background: linear-gradient(135deg, #7655e8, #9a7cf5);
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    box-shadow: 0 10px 25px rgba(118, 85, 232, 0.25);
+}
+
+.auth-eyebrow {
+    color: #7655e8;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.auth-card h1 {
+    margin: 12px 0 10px;
+    font-size: clamp(28px, 5vw, 36px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.auth-description {
+    margin: 0 auto 28px;
+    max-width: 320px;
+    color: var(--muted, #77748b);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    text-align: left;
+}
+
+.auth-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.auth-field label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.auth-field input {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    box-sizing: border-box;
+    border: 1px solid #e3dfef;
+    border-radius: 12px;
+    outline: none;
+    background: var(--input-bg, #fbfaff);
+    color: inherit;
+    font: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.auth-field input:focus {
+    border-color: #7655e8;
+    box-shadow: 0 0 0 4px rgba(118, 85, 232, 0.12);
+}
+
+.auth-submit {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    border-radius: 13px;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.auth-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(118, 85, 232, 0.25);
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 28px 0 18px;
+}
+
+.auth-divider span {
+    flex: 1;
+    height: 1px;
+    background: #e9e5f2;
+}
+
+.auth-divider small {
+    color: var(--muted, #8a879b);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.auth-register {
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ded5fb;
+    border-radius: 12px;
+    color: #7655e8;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.auth-register:hover {
+    background: rgba(118, 85, 232, 0.07);
+}
+
+.form-errors,
+.field-error {
+    color: #d9435f;
+    font-size: 12px;
+}
+
+.auth-footer {
+    position: relative;
+    z-index: 1;
+    margin: 24px 0 0;
+    color: var(--muted, #8a879b);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.auth-decoration {
+    position: absolute;
+    border: 1px solid rgba(118, 85, 232, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.auth-decoration-one {
+    width: 300px;
+    height: 300px;
+    top: 8%;
+    left: -150px;
+}
+
+.auth-decoration-two {
+    width: 420px;
+    height: 420px;
+    right: -220px;
+    bottom: 3%;
+    border-color: rgba(54, 214, 197, 0.18);
+}
+
+@keyframes auth-appear {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 520px) {
+    .auth-header {
+        width: calc(100% - 32px);
+        padding: 18px 0;
+    }
+
+    .auth-card {
+        padding: 30px 22px;
+        border-radius: 22px;
+    }
+
+    .auth-page {
+        padding: 20px 16px;
+    }
+}
