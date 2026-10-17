@@ -9,6 +9,7 @@ venv/
 # Секретные данные
 .env
 .env.*
+!.env.example
 
 # База данных
 db.sqlite3
@@ -24,5 +25,3 @@ Thumbs.db
 
 # Загруженные пользователями файлы
 media/
-
-!.env.example
